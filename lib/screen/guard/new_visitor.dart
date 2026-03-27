@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:visitor_app/screen/guard/guard_homescreen.dart';
+import 'package:visitor_app/screen/guard/visit_entry.dart';
 
 class NewVisitor extends StatefulWidget {
   const NewVisitor({super.key});
@@ -380,8 +382,8 @@ class _NewVisitorState extends State<NewVisitor> {
                                   86,
                                 ),
                                 decoration: InputDecoration(
-                                  hint: Text("Enter ID Number",),
-                                  hintStyle:TextStyle(color: Colors.grey),
+                                  hint: Text("Enter ID Number"),
+                                  hintStyle: TextStyle(color: Colors.grey),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(7),
                                     borderSide: BorderSide(color: Colors.grey),
@@ -481,7 +483,12 @@ class _NewVisitorState extends State<NewVisitor> {
                           borderRadius: BorderRadiusGeometry.circular(10),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => VisitEntry()),
+                        );
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -506,7 +513,9 @@ class _NewVisitorState extends State<NewVisitor> {
                           borderRadius: BorderRadiusGeometry.circular(10),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

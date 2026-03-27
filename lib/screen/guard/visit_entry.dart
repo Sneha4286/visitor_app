@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:visitor_app/screen/guard/guard_homescreen.dart';
 
 class VisitEntry extends StatefulWidget {
   const VisitEntry({super.key});
@@ -610,7 +611,12 @@ class _VisitEntryState extends State<VisitEntry> {
                   height: 40,
                   width: 320,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 74, 91, 212),
                       foregroundColor: Colors.white,
